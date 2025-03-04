@@ -1,0 +1,1 @@
+This is a simple "To Do List" Project. This project uses beginner level HTML, CSS and JavaScript.
