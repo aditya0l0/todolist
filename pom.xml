@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!--
+        spring-boot-starter-parent gives us sensible defaults.
+        Think of it as a template that pre-configures things like
+        Java version, plugin settings, and dependency versions.
+    -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.0</version>
+	</parent>
+
+	<groupId>com.example</groupId>
+	<artifactId>todo-backend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>todo-backend</name>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
+	<dependencies>
+
+		<!--
+            DEPENDENCY 1: spring-boot-starter-web
+            This gives us everything to build a REST API:
+            - An embedded web server (Tomcat) — no external server needed!
+            - Spring MVC for handling HTTP requests
+        -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!--
+            DEPENDENCY 2: spring-boot-starter-data-jpa
+            JPA = Java Persistence API. It lets us talk to a database
+            using Java objects instead of writing raw SQL queries.
+            Spring Data JPA makes this even easier with built-in methods
+            like save(), findAll(), deleteById(), etc.
+        -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!--
+            DEPENDENCY 3: H2 Database
+            H2 is an in-memory database — it lives in RAM while the app runs.
+            Perfect for learning because:
+            - No installation needed
+            - Resets every time you restart the app
+            - Has a browser console at http://localhost:8080/h2-console
+        -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- This plugin lets us run the app with: mvn spring-boot:run -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
