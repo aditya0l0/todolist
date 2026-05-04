@@ -144,10 +144,3 @@ The app opens at: http://localhost:3000
 8. `setTodos(data)` updates state → React re-renders the list
 
 ---
-
-## Next steps when you're ready
-
-- **Swap H2 for MySQL/PostgreSQL** — just change `application.properties` and add the driver dependency
-- **Add a Service layer** — separates business logic from the controller
-- **Add validation** — `@NotBlank`, `@Size` annotations on the entity
-- **Add error handling** — `@ExceptionHandler` in the controller
